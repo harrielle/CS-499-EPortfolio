@@ -5,64 +5,146 @@
   <title>Harrielle Monestime | CS 499 ePortfolio</title>
   <style>
     body {
-      font-family: Times New Roman, sans-serif;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom, #f9f6ff, #e6e1f0);
+      color: #3e2c4d;
       padding: 20px;
       margin: 0;
     }
+
     header {
-      background-color: #f0f0f0;
-      padding: 20px;
+      background-color: rgba(234, 225, 255, 0.85);
+      padding: 30px 20px;
       text-align: center;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 2px dashed #d3bce6;
+      box-shadow: 0 2px 5px rgba(83, 60, 100, 0.2);
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-style: italic;
+      font-size: 1.1em;
+    }
+
+    .section {
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .delay-1 { animation-delay: 0.5s; }
+    .delay-2 { animation-delay: 1.2s; }
+    .delay-3 { animation-delay: 1.9s; }
+    .delay-4 { animation-delay: 2.6s; }
+    .delay-5 { animation-delay: 3.3s; }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(25px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    a {
+      color: #6c2fa4;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+    }
+
+    a:hover {
+      color: #a36dc7;
+      text-shadow: 0 0 8px #d4a8ef;
+    }
+
+    a:hover::after {
+      content: "✨";
+      position: absolute;
+      right: -1.5em;
+      top: 0;
+      animation: twinkle 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.6; transform: rotate(0deg); }
+      to   { opacity: 1; transform: rotate(20deg); }
+    }
+
+    h2 {
+      margin-top: 30px;
+      color: #4e3066;
+      border-bottom: 1px solid #cbb0e5;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
     footer {
-      background-color: #f0f0f0;
+      background-color: rgba(234, 225, 255, 0.8);
       padding: 10px;
       text-align: center;
-      border-top: 1px solid #ccc;
+      border-top: 2px dashed #d3bce6;
+      font-size: 0.9em;
       position: fixed;
       bottom: 0;
       width: 100%;
-      font-size: 0.9em;
-    }
-    main {
-      padding-bottom: 60px; /* to avoid footer overlap */
+      box-shadow: 0 -2px 5px rgba(83, 60, 100, 0.1);
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Harrielle Monestime</h1>
-    <p>CS 499 Capstone ePortfolio | SNHU</p>
+    <p>CS 499 Capstone ePortfolio ✧ SNHU ✧ Moon-coded & magic-infused</p>
   </header>
 
   <main>
-    <h2>Welcome in!</h2>
-    <p>My experience in the Computer Science program at SNHU is reflected in my portfolio.  It's been a lengthy journey, I believe, filled with obstacles, learning curves, and times when I genuinely shocked myself.  This body of work, in my opinion, demonstrates my growth in confidence as well as competence.  My Animal Shelter Dashboard project, which connects everything, is among my proudest accomplishments.  It allowed me to consider how things ought to be arranged, how people utilize information, and how to create something that is both practical and safe.  All of those teachings are combined in one portfolio, which I hope gives you an idea of my abilities and future goals.</p>
+    <section class="section delay-1">
+      <h2>🌸 Welcome in!</h2>
+      <p>
+        My experience in the Computer Science program at SNHU is reflected in my portfolio. It's been a lengthy journey, I believe, filled with obstacles, learning curves, and times when I genuinely shocked myself. This body of work, in my opinion, demonstrates my growth in confidence as well as competence. My Animal Shelter Dashboard project, which connects everything, is among my proudest accomplishments. It allowed me to consider how things ought to be arranged, how people utilize information, and how to create something that is both practical and safe. All of those teachings are combined in one portfolio, which I hope gives you an idea of my abilities and future goals.
+      </p>
+    </section>
 
-    <h2>📜 Professional Self-Assessment</h2>
-    <a href="CS 499 Module One Assignment_Monestime.docx" download>Download Self-Assessment (DOCX)</a>
+    <section class="section delay-2">
+      <h2>📜 Professional Self-Assessment</h2>
+      <a href="CS 499 Module One Assignment_Monestime.docx" download>Download Self-Assessment (DOCX)</a>
+    </section>
 
-    <h2>🎥 Code Review</h2>
-    <a href="https://youtu.be/YOUR_VIDEO_LINK" target="_blank">Watch Code Review Video</a>
+    <section class="section delay-3">
+      <h2>🎥 Code Review</h2>
+      <a href="https://youtu.be/DCf3ZeIPYJQ" target="_blank">Watch Code Review Video!</a>
+    </section>
 
-    <h2>🧠 Artifact Enhancements</h2>
-    <ul>
-      <li><a href="CS 499 Milestone_TwoMonestime.docx" download>Software Design & Engineering</a></li>
-      <li><a href="CS 499 Milestone_ThreeMonestime.docx" download>Algorithms & Data Structures</a></li>
-      <li><a href="CS 499 Milestone_TwoMonestime.docx" download>Databases</a> (included in Software milestone)</li>
-    </ul>
+    <section class="section delay-4">
+      <h2>🧠 Artifact Enhancements</h2>
+      <ul>
+        <li><a href="CS 499 Milestone_TwoMonestime.docx" download>Software Design & Engineering</a></li>
+        <li><a href="CS 499 Milestone_ThreeMonestime.docx" download>Algorithms & Data Structures</a></li>
+        <li><a href="CS 499 Milestone_TwoMonestime.docx" download>Databases</a> (included in Software milestone)</li>
+      </ul>
+    </section>
 
-    <h2>💻 Project Files</h2>
-    <ul>
-      <li><a href="animalShelter.py" download>Animal Shelter Python File</a></li>
-      <li><a href=".env.txt" download>.env Sample</a></li>
-      <li><a href="vertopal.com_ProjectTwoMonestime.pdf" download>Original Jupyter Notebook Project</a></li>
-      <li><a href="CS340 Project Two ReadMe_Monestime.docx" download>Project README</a></li>
-    </ul>
+    <section class="section delay-5">
+      <h2>📂 Project Files</h2>
+      <ul>
+        <li><a href="animalShelter.py" download>Animal Shelter Python File</a></li>
+        <li><a href=".env.txt" download>.env Sample</a></li>
+        <li><a href="vertopal.com_ProjectTwoMonestime.pdf" download>Original Jupyter Notebook Project</a></li>
+        <li><a href="CS340 Project Two ReadMe_Monestime.docx" download>Project README</a></li>
+      </ul>
 
-    <h2>📂 GitHub Repo</h2>
-    <a href="https://github.com/harrielle/CS-340-Module-Eight" target="_blank">View Full Codebase</a>
+      <h2>🔗 GitHub Repo</h2>
+      <a href="https://github.com/harrielle/CS-340-Module-Eight" target="_blank">View Full Codebase</a>
+    </section>
   </main>
 
   <footer>
@@ -78,7 +160,7 @@
     }
 
     setInterval(updateClock, 1000);
-    updateClock(); // initial call
+    updateClock(); // Initial call
   </script>
 </body>
 </html>
