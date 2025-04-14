@@ -8,7 +8,7 @@
       font-family: 'Georgia', serif;
       background: linear-gradient(to bottom, #f9f6ff, #e6e1f0);
       color: #3e2c4d;
-      padding: 20px;
+      padding: 0;
       margin: 0;
     }
 
@@ -31,20 +31,26 @@
       font-size: 1.1em;
     }
 
-    .section {
+    main {
+      animation: fadeInUp 1.5s ease-out forwards;
       opacity: 0;
-      animation: fadeInUp 1s ease-out forwards;
+      padding: 20px;
+      padding-bottom: 160px; /* Fixes footer overlap */
     }
 
-    .delay-1 { animation-delay: 0.5s; }
-    .delay-2 { animation-delay: 1.2s; }
-    .delay-3 { animation-delay: 1.9s; }
-    .delay-4 { animation-delay: 2.6s; }
-    .delay-5 { animation-delay: 3.3s; }
+    h2 {
+      margin-top: 30px;
+      color: #4e3066;
+      border-bottom: 1px solid #cbb0e5;
+      padding-bottom: 5px;
+    }
 
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(25px); }
-      100% { opacity: 1; transform: translateY(0); }
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
     }
 
     a {
@@ -67,26 +73,6 @@
       animation: twinkle 1s ease-in-out infinite alternate;
     }
 
-    @keyframes twinkle {
-      from { opacity: 0.6; transform: rotate(0deg); }
-      to   { opacity: 1; transform: rotate(20deg); }
-    }
-
-    h2 {
-      margin-top: 30px;
-      color: #4e3066;
-      border-bottom: 1px solid #cbb0e5;
-      padding-bottom: 5px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
     footer {
       background-color: rgba(234, 225, 255, 0.8);
       padding: 10px;
@@ -98,52 +84,62 @@
       width: 100%;
       box-shadow: 0 -2px 5px rgba(83, 60, 100, 0.1);
     }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(25px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.6; transform: rotate(0deg); }
+      to   { opacity: 1; transform: rotate(20deg); }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Harrielle Monestime</h1>
-    <p>CS 499 Capstone ePortfolio ✧ SNHU ✧ Moon-coded & magic-infused</p>
+    <p>CS 499 Capstone ePortfolio ✦ SNHU ✦ A Journey Through Code and Creativity</p>
   </header>
 
   <main>
-    <section class="section delay-1">
+    <section class="fade-in">
       <h2>🌸 Welcome in!</h2>
       <p>
         My experience in the Computer Science program at SNHU is reflected in my portfolio. It's been a lengthy journey, I believe, filled with obstacles, learning curves, and times when I genuinely shocked myself. This body of work, in my opinion, demonstrates my growth in confidence as well as competence. My Animal Shelter Dashboard project, which connects everything, is among my proudest accomplishments. It allowed me to consider how things ought to be arranged, how people utilize information, and how to create something that is both practical and safe. All of those teachings are combined in one portfolio, which I hope gives you an idea of my abilities and future goals.
       </p>
     </section>
 
-    <section class="section delay-2">
+    <section class="fade-in">
       <h2>📜 Professional Self-Assessment</h2>
       <a href="CS 499 Module One Assignment_Monestime.docx" download>Download Self-Assessment (DOCX)</a>
     </section>
 
-    <section class="section delay-3">
+    <section class="fade-in">
       <h2>🎥 Code Review</h2>
       <a href="https://youtu.be/DCf3ZeIPYJQ" target="_blank">Watch Code Review Video!</a>
     </section>
 
-    <section class="section delay-4">
+    <section class="fade-in">
       <h2>🧠 Artifact Enhancements</h2>
       <ul>
         <li><a href="CS 499 Milestone_TwoMonestime.docx" download>Software Design & Engineering</a></li>
         <li><a href="CS 499 Milestone_ThreeMonestime.docx" download>Algorithms & Data Structures</a></li>
-        <li><a href="CS 499 Milestone_TwoMonestime.docx" download>Databases</a> (included in Software milestone)</li>
+        <li><a href="CS 499 Milestone_FourMonestime.docx" download>Databases</a> (included in Software milestone)</li>
       </ul>
     </section>
 
-    <section class="section delay-5">
-      <h2>📂 Project Files</h2>
+    <section class="fade-in">
+      <h2>💻 Project Files</h2>
       <ul>
-        <li><a href="animalShelter.py" download>Animal Shelter Python File</a></li>
-        <li><a href=".env.txt" download>.env Sample</a></li>
-        <li><a href="vertopal.com_ProjectTwoMonestime.pdf" download>Original Jupyter Notebook Project</a></li>
+        <li><a href="enhanced/animalShelter.py" download>Animal Shelter Python File</a></li>
+        <li><a href="enhanced/.env" download>.env Sample</a></li>
+        <li><a href="enhanced/animalShelter_dashboard.ipynb" download>Original Jupyter Notebook Project</a></li>
         <li><a href="CS340 Project Two ReadMe_Monestime.docx" download>Project README</a></li>
       </ul>
 
       <h2>🔗 GitHub Repo</h2>
-      <a href="https://github.com/harrielle/CS-340-Module-Eight" target="_blank">View Full Codebase</a>
+      <a href="https://github.com/harrielle/CS-499-EPortfolio" target="_blank">View Full Codebase</a>
     </section>
   </main>
 
