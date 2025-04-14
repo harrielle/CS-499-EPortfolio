@@ -35,7 +35,7 @@
       animation: fadeInUp 1.5s ease-out forwards;
       opacity: 0;
       padding: 20px;
-      padding-bottom: 160px; /* Fixes footer overlap */
+      padding-bottom: 160px; /* To prevent footer overlap */
     }
 
     h2 {
@@ -83,6 +83,29 @@
       bottom: 0;
       width: 100%;
       box-shadow: 0 -2px 5px rgba(83, 60, 100, 0.1);
+    }
+
+    #music-controls {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    #toggle-music {
+      background: #e8d8ff;
+      border: 2px solid #c7a2ff;
+      padding: 10px 20px;
+      font-size: 1em;
+      font-family: 'Georgia', serif;
+      color: #5b2d91;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 8px #d9b3ff;
+      transition: all 0.3s ease-in-out;
+    }
+
+    #toggle-music:hover {
+      background: #f6edff;
+      box-shadow: 0 0 12px #c791ff;
     }
 
     @keyframes fadeInUp {
@@ -141,13 +164,59 @@
       <h2>🔗 GitHub Repo</h2>
       <a href="https://github.com/harrielle/CS-499-EPortfolio" target="_blank">View Full Codebase</a>
     </section>
+
+    <div id="music-controls">
+      <button id="toggle-music">🎵 Play Music</button>
+    </div>
   </main>
 
   <footer>
     <div id="clock">Loading your local time...</div>
   </footer>
 
+  <!-- 🎶 Background Music Script -->
+  <audio id="bg-music" preload="auto" loop>
+    <source src="music/tim-dom-dom.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
   <script>
+    const audio = document.getElementById("bg-music");
+    const toggleBtn = document.getElementById("toggle-music");
+    let isPlaying = false;
+
+    function fadeIn(audio, duration = 3000) {
+      audio.volume = 0;
+      audio.play().then(() => {
+        let step = 0.05;
+        let interval = setInterval(() => {
+          if (audio.volume < 1) {
+            audio.volume = Math.min(1, audio.volume + step);
+          } else {
+            clearInterval(interval);
+          }
+        }, duration / (1 / step));
+      }).catch(() => {
+        // User interaction required
+      });
+    }
+
+    window.addEventListener("load", () => {
+      fadeIn(audio); // Try autoplay with fade-in
+    });
+
+    toggleBtn.addEventListener("click", () => {
+      if (!isPlaying) {
+        fadeIn(audio);
+        toggleBtn.textContent = "🔇 Mute Music";
+        isPlaying = true;
+      } else {
+        audio.pause();
+        toggleBtn.textContent = "🎵 Play Music";
+        isPlaying = false;
+      }
+    });
+
     function updateClock() {
       const now = new Date();
       const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
@@ -156,7 +225,7 @@
     }
 
     setInterval(updateClock, 1000);
-    updateClock(); // Initial call
+    updateClock();
   </script>
 </body>
 </html>
